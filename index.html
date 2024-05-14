@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <label for="">enter number of row:</label>
+        <input id="i1" type="text"><br>
+        <label for="">enter number of column:</label>
+        <input id="i2" type="text"><br>
+        <button id="sub" onclick="myfun()">create</button>
+    </div>
+</body>
+<script>
+    function myfun(){
+    var a=document.getElementById("i1").value
+    var b=document.getElementById("i2").value
+    var c=document.getElementsByClassName("main")[0]
+    var t=document.getElementsByTagName("table")
+    if(t.length>0){
+       c.removeChild(t[0])
+    }
+    var d=0
+    var x=document.createElement("table")
+    c.appendChild(x)
+    for(var i=1;i<=a;i++)
+    {
+        var row=document.createElement("tr")
+        x.appendChild(row)
+        for(var j=1;j<=b;j++)
+        {
+            d++;
+            var col=document.createElement("td")
+            row.appendChild(col)
+            col.innerHTML+=d       
+         }
+         x.border="2px"
+         x.height="10px"
+         x.width="10px"
+         x.bgColor="lightblue"
+         
+    }
+
+ }
+</script>
+</html>
